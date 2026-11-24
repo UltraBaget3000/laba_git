@@ -32,3 +32,5 @@
 создание файла file2.txt в ветке master и фиксирование его коммитом. Команда git log --oneline --graph --all показала разветвление истории: ветки master и mybranch теперь указывают на разные последние коммиты
 ![alt text]({2A8E0050-C356-4B59-9724-B7F2AFF2619F}.png) ![alt text]({8D208449-0B8D-4BE9-B0DE-4F17BDF5FDA0}.png)
 переключились на ветку mybranch и файл file2.txt тут нет, так как есть только в master, зато тут есть file2.txt. команда diff mybranch master показала разницу 
+![alt text]({EB75A678-259A-4076-898C-0055DBAC63A7}.png)
+Добавление файл отчета README.md вместе со скриншотами, зафиксировал коммитом и отправил ветку mybranch на gitHub командой git push -u origin mybranch
