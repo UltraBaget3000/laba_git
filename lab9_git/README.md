@@ -67,3 +67,34 @@
 после git restore sort.c изменения откатились и команда git status показывает что sort.c полностью исчез из списка изменённых
 ![alt text]({1EB6ECE9-6F6D-4E3E-B0C4-731EF68B56AF}.png)
 закомитили и запушили 
+
+
+//ветки
+
+
+![alt text]({283129D6-7699-4FD3-B973-29FDC9C771DE}.png)
+переход в главную ветку master 
+![alt text]({82CB6AD2-12BC-4DA2-A0F0-86BFC228E0C4}.png)
+создание файла greeting.txt, затем проиндексировали его, и закоммитили
+![alt text]({19E37D04-5483-4115-9FD3-7D85BA590F78}.png)
+тут мы добавили "hello" в файле, также его проиндексировали, и закомитили
+![alt text]({1FF8F4E5-471F-43F6-9192-AFCD06A4D532}.png)
+создание ветки feature/uppercase, переход на эту ветку и git status. он нам говорит что мы на этой ветке, что отслеживаемые файлы не изменились, присутсвуют только скриншоты, которые я добавил 
+![alt text](image-1.png)![alt text](image-2.png)![alt text](image-3.png)
+отредактировали hello на HELLO, добавил в индекс, _правда я забыл закоммитить, потом я сделал это, потому что не работал git diff master feature/uppercase_. далее git branch показывает список всех локальных веток, а звёздочкой * и зелёным цветом отмечена текущая активная ветка feature/uppercase. Проверил историю коммитов с помощью git log --oneline --graph --all и убедился через cat greeting.txt, что в рабочей директории в файле HELLO
+![alt text](image-4.png)
+переключился на главную ветку master и проверил содержимое файла greeting.txt через cat greeting.txt. в нём оставалось слово hello. git diff master feature/uppercase показала разницу между ветками - удаление строки -hello и добавление +HELLO. после выполнения git merge feature/uppercase git выполнил быструю перемотку (fast-forward), сдвинув указатель master на коммит d06ad60, а повторная проверка cat greeting.txt подтвердила, что содержимое файла обновилось на HELLO
+![alt text]({3F98C2C2-8D9B-4CB6-A9F2-1C7E261B3867}.png)
+удаление ветки с заглавными буквами
+![alt text]({FB31D263-678F-4BF6-B95B-749BCD2C9DA4}.png)![alt text]({B08E870C-D65E-4D9E-8510-0B8127F04D4E}.png)
+обьединили ветки mybranch и master, и там на скрине показано что и перенеслись все скрины в README.md.
+далее командой git log --oneline --graph --all вывели историю комитов _или локальный репо_, и появился коммит слияния который обьединил историю веток. 
+ну и далее git add .
+git commit -m "Complete grade 4: ff-merge and final report"
+git push origin master
+
+
+
+
+
+
