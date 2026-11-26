@@ -34,3 +34,34 @@
 переключились на ветку mybranch и файл file2.txt тут нет, так как есть только в master, зато тут есть file2.txt. команда diff mybranch master показала разницу 
 ![alt text]({EB75A678-259A-4076-898C-0055DBAC63A7}.png)
 Добавление файл отчета README.md вместе со скриншотами, зафиксировал коммитом и отправил ветку mybranch на gitHub командой git push -u origin mybranch
+
+
+
+на 4 
+
+
+
+
+![alt text]({2CF9FC1F-D899-4E4B-8DE2-9D2E773555CF}.png)
+после добавления функции main в sort.c команда git diff показывает все новые строки зелёным цветом, а git diff --staged пуста, так как изменения ещё не добавлены в индекс
+я забыл заскринить git add sort.c, но его набирал
+![alt text]({696F9C57-B1EE-40C3-A264-A60CCB45842A}.png)
+после git add sort.c - git diff ничего не выводит, т.к рабочая директория совпадает с индексом, а уже ... --started показыват что подготов чтобы комитить
+![alt text]({52D63325-F8A2-4781-A524-604FE7CBE792}.png)
+![alt text]({9DB1AF6F-5AE1-4D3E-8E3E-E8986DD230C9}.png)
+после удаления числа из массива в sort.c git diff показывает это последнее изменение, а git diff --staged по-прежнему показывает старую версию с массивом {4, 2, 0} из области индекса, так как последнее удаление ещё не было добавлено через git add
+![alt text]({1DBF914B-8B70-4DA2-9DC9-08DD37069DFF}.png)
+проверил статус репозитория и sort.c отображается дважды - зелёным в разделе changes to be committed - версия из области индекса с добавленной функцией main() и красным в разделе changes not staged for commit неиндексированное удаление числа из массива в рабочей директории
+![alt text]({012F7D58-8854-4D2C-92A4-C77CCC757806}.png)
+красный modified изчез, и число воостановилось в массиве
+![alt text]({A9A4F95A-F6A4-44EC-B8B0-4BB13D44D38D}.png)
+после git restore --staged sort.c исчез раздел changes to be commited, sort.c переместился changes not staged for commit, ну то есть изменения остались только в рабочей директории.
+![alt text]({6C9E42CE-ABDA-4FEC-8A0B-835853EB1445}.png)
+зафиксировали изменения комитом, а команда git log --oneline --graph --all показывает что ветка mybranch продвинулась относительно origin/mybranch 
+![alt text]({DE693C95-6D74-41F1-949F-C8EEE7B814DD}.png)
+выглядит так
+![alt text]({3BA65C0E-AFA9-4474-A6C6-22CF3C725667}.png)
+команда git status показывает, что файл sort.c изменен в рабочей директории, но ещё не добавлен в индекс changes not staged for commit
+![alt text]({D2571F9A-8AFB-427B-A8C9-0E31A4FF6EA4}.png)
+![alt text]({32A6DC59-1F75-4708-8376-12C9DF55B45E}.png)
+после git restore sort.c изменения откатились и команда git status показывает что sort.c полностью исчез из списка изменённых
