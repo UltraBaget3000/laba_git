@@ -65,3 +65,5 @@
 ![alt text]({D2571F9A-8AFB-427B-A8C9-0E31A4FF6EA4}.png)
 ![alt text]({32A6DC59-1F75-4708-8376-12C9DF55B45E}.png)
 после git restore sort.c изменения откатились и команда git status показывает что sort.c полностью исчез из списка изменённых
+![alt text]({1EB6ECE9-6F6D-4E3E-B0C4-731EF68B56AF}.png)
+закомитили и запушили 
